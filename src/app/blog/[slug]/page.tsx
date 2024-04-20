@@ -1,13 +1,13 @@
-import Link from "next/link";
-import { draftMode } from "next/headers";
+import Link from 'next/link';
+import { draftMode } from 'next/headers';
 
-import MoreStories from "../../more-stories";
-import Avatar from "../../avatar";
-import Date from "../../date";
-import CoverImage from "../../cover-image";
+import MoreStories from '../../more-stories';
+import Avatar from '../../avatar';
+import Date from '../../date';
+import CoverImage from '../../cover-image';
 
-import { Markdown } from "@/lib/markdown";
-import { getAllPosts, getPostAndMorePosts } from "@/lib/api";
+import { Markdown } from '@/lib/markdown';
+import { getAllPosts, getPostAndMorePosts } from '@/lib/api';
 
 export async function generateStaticParams() {
   const allPosts = await getAllPosts(false);
@@ -17,7 +17,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function PostPage({
+export default async function BlogPage({
   params,
 }: {
   params: { slug: string };

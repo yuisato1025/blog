@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Footer, Header } from '../components';
 import './globals.css';
 import { Inter } from 'next/font/google';
 
@@ -13,24 +13,6 @@ const inter = Inter({
   display: 'swap',
 });
 
-function Header() {
-  return (
-    <header className="bg-accent-1 border-b border-accent-2 p-4 shadow-sm">
-      <h1 className="text-2xl font-bold">
-        <Link href="/">Yui Sato's Blog</Link>
-      </h1>
-    </header>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="bg-accent-1 border-t border-accent-2 p-4">
-      <small>&copy; 2024 - Copyright yuisato, All Rights Reserved.</small>
-    </footer>
-  );
-}
-
 export default function RootLayout({
   children,
 }: {
@@ -39,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className={inter.variable}>
       <body>
-        <section className="min-h-screen">
+        <section className="flex flex-col min-h-screen">
           <Header />
           <main>{children}</main>
           <Footer />
